@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix EduTwin AI",
+  "description": "Personalized Academic \u0026 Campus Mentor with Student Digital Twin, AI Opportunity Matching, and Career Growth Engine.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

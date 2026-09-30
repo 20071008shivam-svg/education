@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-space {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.font-mono-tech {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Custom smooth scrollbar adapted for dark cursed theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #07070b;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #07070b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3b2064;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #4c1d95;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7c3aed;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #a855f7;
+}
+
+/* Cursed Energy Glowing Utilities */
+.glow-cursed {
+  box-shadow: 0 0 25px -4px rgba(168, 85, 247, 0.45);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 25px -4px rgba(34, 211, 238, 0.45);
+}
+
+.glow-red {
+  box-shadow: 0 0 25px -4px rgba(239, 68, 68, 0.45);
+}
+
+.glow-border-purple {
+  border-color: rgba(168, 85, 247, 0.5);
+  box-shadow: 0 0 15px -2px rgba(124, 58, 237, 0.3);
+}
+
+/* Cursed Energy Particles Animation */
+@keyframes particles-animation {
+  0% {
+    background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+    opacity: 0.7;
+  }
+  50% {
+    background-position: 40px -80px, -50px -100px, 30px -60px, -20px -90px, 60px -70px;
+    opacity: 0.95;
+  }
+  100% {
+    background-position: 80px -160px, -100px -200px, 60px -120px, -40px -180px, 120px -140px;
+    opacity: 0.7;
+  }
+}
+
+/* Cursed energy subtle background pattern with animated floating particle layer */
+.bg-domain-grid {
+  position: relative;
+  background-color: #07070b;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(124, 58, 237, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at 100% 100%, rgba(34, 211, 238, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 0% 50%, rgba(244, 63, 94, 0.05) 0%, transparent 40%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+}
+
+.bg-domain-grid::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: 
+    radial-gradient(1.5px 1.5px at 30px 50px, rgba(168, 85, 247, 0.85), transparent),
+    radial-gradient(2px 2px at 180px 220px, rgba(34, 211, 238, 0.75), transparent),
+    radial-gradient(2px 2px at 380px 110px, rgba(192, 132, 252, 0.9), transparent),
+    radial-gradient(1.5px 1.5px at 600px 340px, rgba(244, 63, 94, 0.7), transparent),
+    radial-gradient(2.5px 2.5px at 820px 180px, rgba(34, 211, 238, 0.8), transparent),
+    radial-gradient(2px 2px at 1050px 290px, rgba(168, 85, 247, 0.85), transparent);
+  background-size: 550px 550px, 700px 700px, 600px 600px, 800px 800px, 650px 650px, 750px 750px;
+  animation: particles-animation 24s ease-in-out infinite alternate;
+  opacity: 0.65;
+}
+
+/* Subtle Domain Seal Animation */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes reverse-spin-slow {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes cursed-pulse {
+  0%, 100% {
+    opacity: 0.85;
+    filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.6));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 18px rgba(34, 211, 238, 0.8));
+  }
+}
+
+@keyframes domain-expand-ring {
+  0% {
+    transform: scale(0.1) rotate(0deg);
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3.5) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 28s linear infinite;
+}
+
+.animate-reverse-spin-slow {
+  animation: reverse-spin-slow 20s linear infinite;
+}
+
+.animate-cursed-pulse {
+  animation: cursed-pulse 3s ease-in-out infinite;
+}
+
+.animate-domain-ring {
+  animation: domain-expand-ring 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+
